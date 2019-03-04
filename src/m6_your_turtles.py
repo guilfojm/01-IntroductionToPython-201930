@@ -2,10 +2,10 @@
 Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
+         Aaron Wilkin, their colleagues, and Justin Guilfoyle.
 """
 ########################################################################
-# TODO: 1.
+# DONE: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ########################################################################
 
@@ -27,4 +27,45 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #
 #   Don't forget to COMMIT-and-PUSH when you are done with this module.
 #
-########################################################################
+#######################################################################
+import rosegraphics as rg
+
+window = rg.TurtleWindow()
+
+size = 150
+
+blue_turtle = rg.SimpleTurtle('turtle')
+blue_turtle.pen = rg.Pen('midnight blue',5)
+blue_turtle.speed = 15
+
+
+for k in range(15):
+
+    # Put the pen down, then draw a square of the given size:
+    blue_turtle.draw_square(size)
+
+    # Move a little below and to the right of where the previous
+    # square started.  Do this with the pen up (so nothing is drawn).
+    blue_turtle.pen_up()
+    blue_turtle.right(30)
+    blue_turtle.forward(10)
+    blue_turtle.left(5)
+
+    # Put the pen down again (so drawing resumes).
+    # Make the size for the NEXT square be 12 pixels smaller.
+    blue_turtle.pen_down()
+    size = size - 12
+
+green_turtle = rg.SimpleTurtle('turtle')
+green_turtle.pen = rg.Pen('green',2)
+green_turtle.speed = 4
+
+for k in range(35):
+    green_turtle.left(k)
+    green_turtle.forward(20)
+    green_turtle.right(35)
+    green_turtle.backward(30)
+
+
+window.close_on_mouse_click()
+
