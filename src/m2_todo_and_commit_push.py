@@ -130,3 +130,15 @@ print(3607*34227)
 #   DO IT FREQUENTLY; AT LEAST once per module.
 #
 ###############################################################################
+import math
+print(3 * ('hi' + 'bye'))
+x=.5
+
+y = math.sin(x) + math.cos(x)
+print(y)
+
+z=math.factorial(20)
+print(z)
+
+
+
